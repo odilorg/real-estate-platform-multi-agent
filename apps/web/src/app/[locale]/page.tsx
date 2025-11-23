@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { api, ApiClientError } from '@/lib/api-client';
+import { useAuth } from '@/contexts/AuthContext';
 
 interface HealthResponse {
   status: string;
@@ -12,6 +13,7 @@ interface HealthResponse {
 
 export default function HomePage() {
   const t = useTranslations();
+  const { user, isAuthenticated, isLoading: authLoading } = useAuth();
   const [health, setHealth] = useState<HealthResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -51,6 +53,23 @@ export default function HomePage() {
             {t('home.description')}
           </p>
         </div>
+
+        {!authLoading && (
+          <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 border border-gray-200 mb-8">
+            {isAuthenticated ? (
+              <div className="text-center">
+                <h2 className="text-xl font-semibold text-gray-800 mb-2">
+                  {t('home.welcomeBack')}, {user?.firstName || user?.email}!
+                </h2>
+                <p className="text-gray-600">Role: {user?.role}</p>
+              </div>
+            ) : (
+              <div className="text-center">
+                <p className="text-gray-700">{t('home.notLoggedIn')}</p>
+              </div>
+            )}
+          </div>
+        )}
 
         <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 border border-gray-200">
           <h2 className="text-xl md:text-2xl font-semibold mb-6 text-gray-800">

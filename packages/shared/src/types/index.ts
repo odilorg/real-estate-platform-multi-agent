@@ -53,3 +53,9 @@ export interface PaginatedResponse<T> {
   limit: number;
   totalPages: number;
 }
+
+// Export auth types
+export * from './auth.types';
+
+// Export standardized API types
+export * from './api.types';

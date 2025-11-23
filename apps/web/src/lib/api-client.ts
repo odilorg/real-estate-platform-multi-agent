@@ -24,6 +24,7 @@ export class ApiClientError extends Error {
 
 /**
  * Generic fetch wrapper for API calls
+ * Configured with credentials: 'include' for cookie-based auth
  */
 export async function apiClient<T>(
   endpoint: string,
@@ -33,6 +34,7 @@ export async function apiClient<T>(
 
   const config: RequestInit = {
     ...options,
+    credentials: 'include', // Enable cookies for authentication
     headers: {
       'Content-Type': 'application/json',
       ...options.headers,

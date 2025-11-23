@@ -5,12 +5,56 @@
     "error": "Xato",
     "backendStatus": "Backend holati",
     "healthy": "Ishlayapti",
-    "unhealthy": "Ishlamayapti"
+    "unhealthy": "Ishlamayapti",
+    "welcome": "Xush kelibsiz",
+    "languageSelector": "Til"
   },
   "home": {
     "title": "O'zbekiston ko'chmas mulk platformasiga xush kelibsiz",
     "subtitle": "O'zbekistonda o'zingizga mos mulkni toping",
     "description": "Toshkent, Samarqand, Buxoro va boshqa shaharlardagi kvartiralar, uylar va tijorat mulklarini ko'rib chiqing.",
-    "healthCheck": "API salomatlik tekshiruvi"
+    "healthCheck": "API salomatlik tekshiruvi",
+    "welcomeBack": "Qaytganingizdan xursandmiz",
+    "notLoggedIn": "Siz tizimga kirmagansiz. Davom etish uchun ro'yxatdan o'ting yoki tizimga kiring."
+  },
+  "auth": {
+    "login": "Kirish",
+    "signup": "Ro'yxatdan o'tish",
+    "logout": "Chiqish",
+    "profile": "Profil",
+    "email": "Elektron pochta",
+    "password": "Parol",
+    "firstName": "Ism",
+    "lastName": "Familiya",
+    "phone": "Telefon raqami",
+    "loginButton": "Kirish",
+    "signupButton": "Ro'yxatdan o'tish",
+    "updateButton": "Profilni yangilash",
+    "loginTitle": "Hisobingizga kiring",
+    "signupTitle": "Hisobingizni yarating",
+    "profileTitle": "Sizning profilingiz",
+    "noAccount": "Hisobingiz yo'qmi?",
+    "hasAccount": "Hisobingiz bormi?",
+    "signupLink": "Ro'yxatdan o'tish",
+    "loginLink": "Kirish",
+    "updateSuccess": "Profil muvaffaqiyatli yangilandi",
+    "loginSuccess": "Muvaffaqiyatli kirdingiz",
+    "signupSuccess": "Hisob muvaffaqiyatli yaratildi",
+    "errors": {
+      "invalidCredentials": "Noto'g'ri email yoki parol",
+      "emailExists": "Bu email bilan hisob allaqachon mavjud",
+      "serverError": "Server xatosi. Keyinroq qayta urinib ko'ring",
+      "networkError": "Tarmoq xatosi. Internetga ulanishni tekshiring",
+      "required": "Bu maydon majburiy",
+      "invalidEmail": "Iltimos, to'g'ri email kiriting",
+      "passwordTooShort": "Parol kamida 6 ta belgidan iborat bo'lishi kerak"
+    }
+  },
+  "nav": {
+    "home": "Bosh sahifa",
+    "listings": "E'lonlar",
+    "profile": "Profil",
+    "login": "Kirish",
+    "signup": "Ro'yxatdan o'tish"
   }
 }

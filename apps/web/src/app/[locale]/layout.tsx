@@ -3,6 +3,8 @@ import { getMessages } from 'next-intl/server';
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import { AuthProvider } from '@/contexts/AuthContext';
+import { Header } from '@/components/Header';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -15,22 +17,23 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  // Validate that the incoming `locale` parameter is valid
-  if (!routing.locales.includes(locale as any)) {
+  const validLocales = routing.locales as readonly string[];
+  if (!validLocales.includes(locale)) {
     notFound();
   }
 
-  // Enable static rendering
   setRequestLocale(locale);
 
-  // Providing all messages to the client side
   const messages = await getMessages();
 
   return (
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <AuthProvider>
+            <Header />
+            {children}
+          </AuthProvider>
         </NextIntlClientProvider>
       </body>
     </html>

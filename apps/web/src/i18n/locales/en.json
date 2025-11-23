@@ -5,12 +5,56 @@
     "error": "Error",
     "backendStatus": "Backend Status",
     "healthy": "Healthy",
-    "unhealthy": "Unhealthy"
+    "unhealthy": "Unhealthy",
+    "welcome": "Welcome",
+    "languageSelector": "Language"
   },
   "home": {
     "title": "Welcome to Uzbekistan Real Estate Platform",
     "subtitle": "Find your perfect property in Uzbekistan",
     "description": "Browse apartments, houses, and commercial properties across Tashkent, Samarkand, Bukhara, and other cities.",
-    "healthCheck": "API Health Check"
+    "healthCheck": "API Health Check",
+    "welcomeBack": "Welcome back",
+    "notLoggedIn": "You are not logged in. Please sign up or log in to continue."
+  },
+  "auth": {
+    "login": "Log In",
+    "signup": "Sign Up",
+    "logout": "Log Out",
+    "profile": "Profile",
+    "email": "Email",
+    "password": "Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Phone Number",
+    "loginButton": "Log In",
+    "signupButton": "Sign Up",
+    "updateButton": "Update Profile",
+    "loginTitle": "Log in to your account",
+    "signupTitle": "Create your account",
+    "profileTitle": "Your Profile",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "signupLink": "Sign up",
+    "loginLink": "Log in",
+    "updateSuccess": "Profile updated successfully",
+    "loginSuccess": "Logged in successfully",
+    "signupSuccess": "Account created successfully",
+    "errors": {
+      "invalidCredentials": "Invalid email or password",
+      "emailExists": "An account with this email already exists",
+      "serverError": "Server error. Please try again later",
+      "networkError": "Network error. Please check your connection",
+      "required": "This field is required",
+      "invalidEmail": "Please enter a valid email address",
+      "passwordTooShort": "Password must be at least 6 characters"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "listings": "Listings",
+    "profile": "Profile",
+    "login": "Log In",
+    "signup": "Sign Up"
   }
 }
