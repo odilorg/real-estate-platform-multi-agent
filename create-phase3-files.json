@@ -1,0 +1,5 @@
+{
+  "service": "ListingsService implementation with CRUD operations",
+  "controller": "ListingsController with REST endpoints",
+  "module": "ListingsModule configuration"
+}

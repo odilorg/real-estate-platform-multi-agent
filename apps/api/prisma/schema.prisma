@@ -19,25 +19,52 @@ enum UserStatus {
   PENDING_VERIFICATION
 }
 
+enum PropertyType {
+  APARTMENT
+  HOUSE
+  TOWNHOUSE
+  COMMERCIAL
+  LAND
+  GARAGE
+}
+
+enum DealType {
+  SALE
+  RENT
+  DAILY_RENT
+}
+
+enum ListingStatus {
+  DRAFT
+  PENDING
+  ACTIVE
+  SOLD
+  RENTED
+  ARCHIVED
+  REJECTED
+}
+
 model User {
-  id            String      @id @default(uuid())
-  email         String      @unique
+  id            String     @id @default(uuid())
+  email         String     @unique
   passwordHash  String
   firstName     String?
   lastName      String?
   phone         String?
-  role          UserRole    @default(USER)
-  status        UserStatus  @default(ACTIVE)
-  emailVerified Boolean     @default(false)
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
-  
+  role          UserRole   @default(USER)
+  status        UserStatus @default(ACTIVE)
+  emailVerified Boolean    @default(false)
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+
   refreshTokens RefreshToken[]
-  
-  @@map("users")
+  listings      Listing[]
+  favorites     Favorite[]
+
   @@index([email])
   @@index([role])
   @@index([status])
+  @@map("users")
 }
 
 model RefreshToken {
@@ -46,11 +73,85 @@ model RefreshToken {
   userId    String
   expiresAt DateTime
   createdAt DateTime @default(now())
-  
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  
-  @@map("refresh_tokens")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   @@index([userId])
   @@index([token])
   @@index([expiresAt])
+  @@map("refresh_tokens")
+}
+
+model Listing {
+  id            String         @id @default(uuid())
+  ownerId       String
+  owner         User           @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  propertyType  PropertyType
+  dealType      DealType
+  status        ListingStatus  @default(DRAFT)
+  title         Json
+  description   Json
+  city          String
+  district      String?
+  address       String?
+  latitude      Float?
+  longitude     Float?
+  price         Decimal        @db.Decimal(12, 2)
+  currency      String         @default("UZS")
+  area          Float?
+  rooms         Int?
+  bedrooms      Int?
+  bathrooms     Int?
+  floor         Int?
+  totalFloors   Int?
+  features      Json?
+  viewCount     Int            @default(0)
+  favoriteCount Int            @default(0)
+  images        ListingImage[]
+  favorites     Favorite[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  publishedAt   DateTime?
+
+  @@index([ownerId])
+  @@index([propertyType])
+  @@index([dealType])
+  @@index([status])
+  @@index([city])
+  @@index([price])
+  @@index([rooms])
+  @@index([createdAt])
+  @@index([publishedAt])
+  @@index([status, propertyType, dealType])
+  @@index([city, status])
+  @@map("listings")
+}
+
+model ListingImage {
+  id           String   @id @default(uuid())
+  listingId    String
+  listing      Listing  @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  url          String
+  thumbnailUrl String?
+  caption      String?
+  order        Int      @default(0)
+  createdAt    DateTime @default(now())
+
+  @@index([listingId])
+  @@index([order])
+  @@map("listing_images")
+}
+
+model Favorite {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  listingId String
+  listing   Listing  @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, listingId])
+  @@index([userId])
+  @@index([listingId])
+  @@map("favorites")
 }

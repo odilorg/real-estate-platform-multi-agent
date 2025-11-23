@@ -21,7 +21,7 @@ export interface UserBase {
   updatedAt: Date;
 }
 
-// Listing-related types
+// Listing-related types (deprecated - use listing.types.ts instead)
 export interface ListingBase {
   id: string;
   title: string;
@@ -59,3 +59,6 @@ export * from './auth.types';
 
 // Export standardized API types
 export * from './api.types';
+
+// Export listing types
+export * from './listing.types';
