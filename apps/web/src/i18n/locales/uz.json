@@ -1,0 +1,16 @@
+{
+  "common": {
+    "appName": "O'zbekiston ko'chmas mulk platformasi",
+    "loading": "Yuklanmoqda...",
+    "error": "Xato",
+    "backendStatus": "Backend holati",
+    "healthy": "Ishlayapti",
+    "unhealthy": "Ishlamayapti"
+  },
+  "home": {
+    "title": "O'zbekiston ko'chmas mulk platformasiga xush kelibsiz",
+    "subtitle": "O'zbekistonda o'zingizga mos mulkni toping",
+    "description": "Toshkent, Samarqand, Buxoro va boshqa shaharlardagi kvartiralar, uylar va tijorat mulklarini ko'rib chiqing.",
+    "healthCheck": "API salomatlik tekshiruvi"
+  }
+}

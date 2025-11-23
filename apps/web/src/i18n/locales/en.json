@@ -1,0 +1,16 @@
+{
+  "common": {
+    "appName": "Uzbekistan Real Estate Platform",
+    "loading": "Loading...",
+    "error": "Error",
+    "backendStatus": "Backend Status",
+    "healthy": "Healthy",
+    "unhealthy": "Unhealthy"
+  },
+  "home": {
+    "title": "Welcome to Uzbekistan Real Estate Platform",
+    "subtitle": "Find your perfect property in Uzbekistan",
+    "description": "Browse apartments, houses, and commercial properties across Tashkent, Samarkand, Bukhara, and other cities.",
+    "healthCheck": "API Health Check"
+  }
+}

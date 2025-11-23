@@ -1,0 +1,22 @@
+{
+  "name": "@real-estate/shared",
+  "version": "1.0.0",
+  "description": "Shared types and constants for the real estate platform",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "real-estate",
+    "shared",
+    "types"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "*"
+  }
+}
