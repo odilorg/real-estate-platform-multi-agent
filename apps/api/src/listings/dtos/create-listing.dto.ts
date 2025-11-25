@@ -11,7 +11,7 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import { PropertyType, DealType } from '@prisma/client';
+import { PropertyType, DealType } from '@real-estate/shared';
 
 class LocalizedText {
   @ApiPropertyOptional({ example: 'Beautiful apartment in city center' })

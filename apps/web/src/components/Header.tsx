@@ -37,12 +37,31 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo and Brand */}
-          <div className="flex items-center">
+          <div className="flex items-center gap-8">
             <Link href={`/${currentLocale}`} className="flex items-center">
               <span className="text-xl font-bold text-primary-600">
                 {t('common.appName')}
               </span>
             </Link>
+
+            {/* Navigation Links */}
+            <nav className="hidden md:flex items-center gap-4">
+              <Link href={`/${currentLocale}/listings`} className="text-gray-700 hover:text-primary-600">
+                {t('nav.listings')}
+              </Link>
+              {isAuthenticated && (
+                <>
+                  <Link href={`/${currentLocale}/my-listings`} className="text-gray-700 hover:text-primary-600">
+                    {t('listings.myListings')}
+                  </Link>
+                  <Link href={`/${currentLocale}/listings/new`}>
+                    <Button variant="primary" size="sm">
+                      {t('listings.createListing')}
+                    </Button>
+                  </Link>
+                </>
+              )}
+            </nav>
           </div>
 
           {/* Navigation and Auth */}

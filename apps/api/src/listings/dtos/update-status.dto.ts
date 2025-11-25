@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEnum, IsNotEmpty } from 'class-validator';
-import { ListingStatus } from '@prisma/client';
+import { ListingStatus } from '@real-estate/shared';
 
 export class UpdateStatusDto {
   @ApiProperty({

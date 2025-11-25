@@ -6,7 +6,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
-import { UserRole } from '@prisma/client';
+import { UserRole } from '@real-estate/shared';
 
 @Injectable()
 export class ListingOwnershipGuard implements CanActivate {

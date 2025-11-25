@@ -9,7 +9,7 @@ import {
   IsInt,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import { PropertyType, DealType, ListingStatus } from '@prisma/client';
+import { PropertyType, DealType, ListingStatus } from '@real-estate/shared';
 
 export class QueryListingDto {
   @ApiPropertyOptional({ example: 1, minimum: 1, default: 1 })

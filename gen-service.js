@@ -1,0 +1,1 @@
+const fs=require("fs");const c=;fs.writeFileSync("./apps/api/src/listings/listings.service.ts",c);console.log("Done");
