@@ -104,7 +104,17 @@
     "applyFilters": "Filtrlarni qo'llash",
     "perMonth": "oyiga",
     "perDay": "kuniga",
-    "sqm": "m²"
+    "sqm": "m²",
+    "location": "Joylashuv",
+    "propertyDetails": "Mulk tafsilotlari",
+    "titlePlaceholder": "E'lon sarlavhasini kiriting",
+    "descriptionPlaceholder": "Batafsil tavsif kiriting",
+    "cancel": "Bekor qilish",
+    "saving": "Saqlanmoqda...",
+    "updateListing": "E'lonni yangilash",
+    "view": "Ko'rish",
+    "createFirstListing": "Birinchi e'loningizni yarating",
+    "created": "Yaratildi"
   },
   "enums": {
     "propertyType": {

@@ -104,7 +104,17 @@
     "applyFilters": "Применить фильтры",
     "perMonth": "в месяц",
     "perDay": "в день",
-    "sqm": "м²"
+    "sqm": "м²",
+    "location": "Местоположение",
+    "propertyDetails": "Детали недвижимости",
+    "titlePlaceholder": "Введите название объявления",
+    "descriptionPlaceholder": "Введите подробное описание",
+    "cancel": "Отмена",
+    "saving": "Сохранение...",
+    "updateListing": "Обновить объявление",
+    "view": "Просмотр",
+    "createFirstListing": "Создать первое объявление",
+    "created": "Создано"
   },
   "enums": {
     "propertyType": {

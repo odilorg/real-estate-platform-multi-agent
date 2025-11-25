@@ -104,7 +104,17 @@
     "applyFilters": "Apply Filters",
     "perMonth": "per month",
     "perDay": "per day",
-    "sqm": "m²"
+    "sqm": "m²",
+    "location": "Location",
+    "propertyDetails": "Property Details",
+    "titlePlaceholder": "Enter listing title",
+    "descriptionPlaceholder": "Enter detailed description",
+    "cancel": "Cancel",
+    "saving": "Saving...",
+    "updateListing": "Update Listing",
+    "view": "View",
+    "createFirstListing": "Create Your First Listing",
+    "created": "Created"
   },
   "enums": {
     "propertyType": {
